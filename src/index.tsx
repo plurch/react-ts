@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React = require("react");
+import ReactDOM = require("react-dom");
 
 import { Hello } from "./components/Hello";
 
