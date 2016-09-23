@@ -1,27 +1,36 @@
-import {observable, computed} from 'mobx';
+import {observable, computed, extendObservable} from 'mobx';
+import Todo from "./Todo";
 
 export default class ObservableTodoStore {
-  @observable todos = [];
-  @observable pendingRequests = 0;
+  todos: Todo[];
+  pendingRequests: number;
 
-  @computed get completedTodosCount() {
+  get completedTodosCount() {
     return this.todos.filter(
         todo => todo.completed === true
     ).length;
   }
 
-  @computed get report() {
-    if (this.todos.length === 0)
+  get report() {
+    if (this.todos.length === 0) {
       return "<none>";
-    return `Next todo: "${this.todos[0].task}". ` +
-        `Progress: ${this.completedTodosCount}/${this.todos.length}`;
+    }
+    let next = this.todos.filter(todo => !todo.completed)[0];
+    let nextTask = next ? next.task : "All is done! Good Job!";
+
+    return `Next todo: "${nextTask}". 
+        Progress: ${this.completedTodosCount}/${this.todos.length}`;
   }
 
-  addTodo(task) {
-    this.todos.push({
-      task: task,
-      completed: false,
-      assignee: null
+  constructor () {
+    extendObservable(this, {
+      todos: [],
+      pendingRequests: 0
     });
   }
+
+  addTodo(task: string) {
+    this.todos.push(new Todo(task));
+  }
 }
+

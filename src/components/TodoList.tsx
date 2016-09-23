@@ -7,7 +7,6 @@ interface TodoListProps {
   store : any
 }
 
-@observer
 export default class TodoList extends React.Component<TodoListProps,{}> {
   render() {
     const store = this.props.store;
@@ -16,7 +15,7 @@ export default class TodoList extends React.Component<TodoListProps,{}> {
           { store.report }
           <ul>
             { store.todos.map(
-                (todo, idx: number) => <TodoView todo={ todo } key={ idx } />
+                (todo : any, idx: number) => <TodoView todo={ todo } key={ idx } />
             ) }
           </ul>
           { store.pendingRequests > 0 ? <span>Loading...</span> : null }
@@ -31,3 +30,5 @@ export default class TodoList extends React.Component<TodoListProps,{}> {
     this.props.store.addTodo(prompt('Enter a new todo:','coffee plz'));
   }
 }
+
+observer(TodoList);

@@ -5,7 +5,6 @@ interface TodoViewProps {
   todo : any
 }
 
-@observer
 export default class TodoView extends React.Component<TodoViewProps,{}> {
   render() {
     const todo = this.props.todo;
@@ -18,7 +17,7 @@ export default class TodoView extends React.Component<TodoViewProps,{}> {
           />
           { todo.task }
           { todo.assignee
-              ? <small>{ todo.assignee.name }</small>
+              ? <small> / { todo.assignee.name } { todo.assignee.lastname }</small>
               : null
           }
         </li>
@@ -35,3 +34,5 @@ export default class TodoView extends React.Component<TodoViewProps,{}> {
     todo.task = prompt('Task name', todo.task) || todo.task;
   }
 }
+
+observer(TodoView);
