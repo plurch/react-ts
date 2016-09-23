@@ -1,9 +1,13 @@
 import React = require("react");
 import ReactDOM = require("react-dom");
 
-import { Hello } from "./components/Hello";
+import TodoList from "./components/TodoList";
+
+import Todos from "./stores/Todos";
+
+let todoStore = new Todos();
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
+    <TodoList store={todoStore} />,
     document.getElementById("example")
 );
