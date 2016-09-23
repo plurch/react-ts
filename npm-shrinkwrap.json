@@ -2,6 +2,11 @@
   "name": "react-ts",
   "version": "1.0.0",
   "dependencies": {
+    "@types/history": {
+      "version": "2.0.37",
+      "from": "@types/history@*",
+      "resolved": "https://registry.npmjs.org/@types/history/-/history-2.0.37.tgz"
+    },
     "@types/react": {
       "version": "0.14.37",
       "from": "@types/react@latest",
@@ -11,6 +16,11 @@
       "version": "0.14.17",
       "from": "@types/react-dom@latest",
       "resolved": "https://registry.npmjs.org/@types/react-dom/-/react-dom-0.14.17.tgz"
+    },
+    "@types/react-router": {
+      "version": "2.0.36",
+      "from": "@types/react-router@latest",
+      "resolved": "https://registry.npmjs.org/@types/react-router/-/react-router-2.0.36.tgz"
     },
     "abbrev": {
       "version": "1.0.9",
@@ -304,6 +314,11 @@
       "from": "decamelize@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
     },
+    "deep-equal": {
+      "version": "1.0.1",
+      "from": "deep-equal@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/deep-equal/-/deep-equal-1.0.1.tgz"
+    },
     "deep-extend": {
       "version": "0.4.1",
       "from": "deep-extend@>=0.4.0 <0.5.0",
@@ -528,6 +543,18 @@
       "from": "hawk@>=3.1.3 <3.2.0",
       "resolved": "https://registry.npmjs.org/hawk/-/hawk-3.1.3.tgz"
     },
+    "history": {
+      "version": "2.1.2",
+      "from": "history@>=2.1.2 <3.0.0",
+      "resolved": "https://registry.npmjs.org/history/-/history-2.1.2.tgz",
+      "dependencies": {
+        "warning": {
+          "version": "2.1.0",
+          "from": "warning@>=2.0.0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/warning/-/warning-2.1.0.tgz"
+        }
+      }
+    },
     "hoek": {
       "version": "2.16.3",
       "from": "hoek@>=2.0.0 <3.0.0",
@@ -592,6 +619,11 @@
       "version": "0.6.6",
       "from": "interpret@>=0.6.4 <0.7.0",
       "resolved": "https://registry.npmjs.org/interpret/-/interpret-0.6.6.tgz"
+    },
+    "invariant": {
+      "version": "2.2.1",
+      "from": "invariant@>=2.2.1 <3.0.0",
+      "resolved": "https://registry.npmjs.org/invariant/-/invariant-2.2.1.tgz"
     },
     "is-binary-path": {
       "version": "1.0.1",
@@ -972,6 +1004,11 @@
       "from": "qs@>=6.2.0 <6.3.0",
       "resolved": "https://registry.npmjs.org/qs/-/qs-6.2.0.tgz"
     },
+    "query-string": {
+      "version": "3.0.3",
+      "from": "query-string@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/query-string/-/query-string-3.0.3.tgz"
+    },
     "querystring": {
       "version": "0.2.0",
       "from": "querystring@0.2.0",
@@ -1008,6 +1045,11 @@
       "version": "15.3.2",
       "from": "react-dom@latest",
       "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-15.3.2.tgz"
+    },
+    "react-router": {
+      "version": "2.8.1",
+      "from": "react-router@latest",
+      "resolved": "https://registry.npmjs.org/react-router/-/react-router-2.8.1.tgz"
     },
     "readable-stream": {
       "version": "2.0.6",
@@ -1139,6 +1181,11 @@
           "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-1.1.14.tgz"
         }
       }
+    },
+    "strict-uri-encode": {
+      "version": "1.1.0",
+      "from": "strict-uri-encode@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz"
     },
     "string_decoder": {
       "version": "0.10.31",
@@ -1299,6 +1346,11 @@
       "version": "0.0.4",
       "from": "vm-browserify@0.0.4",
       "resolved": "https://registry.npmjs.org/vm-browserify/-/vm-browserify-0.0.4.tgz"
+    },
+    "warning": {
+      "version": "3.0.0",
+      "from": "warning@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/warning/-/warning-3.0.0.tgz"
     },
     "watchpack": {
       "version": "0.2.9",

@@ -1,13 +1,24 @@
 import React = require("react");
 import ReactDOM = require("react-dom");
+import { Router, Route, browserHistory } from 'react-router';
 
-import TodoList from "./components/TodoList";
+import TodoPage from "./components/TodoPage";
+import TodoPageSingle from "./components/TodoPageSingle";
 
-import Todos from "./stores/Todos";
 
-let todoStore = new Todos();
 
 ReactDOM.render(
-    <TodoList store={todoStore} />,
+    <Router history={browserHistory}>
+      <Route path="/" component={TodoPage}>
+        <Route path="single/:id" component={TodoPageSingle}/>
+      </Route>
+    </Router>,
+
     document.getElementById("example")
 );
+
+
+// <Route path="single" component={About}/>
+// <Route path="*" component={NoMatch}/>
+
+// <TodoList store={todoStore} />,
