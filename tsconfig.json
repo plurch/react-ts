@@ -8,14 +8,7 @@
         "noImplicitAny": true,
         "experimentalDecorators": true
     },
-    "files": [
-        "./typings/index.d.ts"
-    ],
     "include": [
       "src/**/*.ts"
-    ],
-    "exclude": [
-      "node_modules",
-      "./typings/**/*"
     ]
 }
