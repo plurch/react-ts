@@ -21,8 +21,8 @@ export default class TodoPageSingle extends React.Component<TodoPageSingleProps,
 
     return (
         <div>
-          <TodoView todo={todo} />
-          <Link to="/">Back</Link>
+          {todo ? <TodoView todo={todo} /> : <div>Not Found</div>}
+          <Link to="/">Home</Link>
         </div>
     )
   }
