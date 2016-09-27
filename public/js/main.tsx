@@ -7,6 +7,9 @@ import ObservableTodoStore from './stores/Todos';
 import TodoPage from "./pages/TodoPage";
 import TodoPageSingle from "./pages/TodoPageSingle";
 
+// add styling using webpack loaders:
+import '../scss/main.scss';
+
 let todos = new ObservableTodoStore();
 
 ReactDOM.render(

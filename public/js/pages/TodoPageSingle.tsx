@@ -17,10 +17,10 @@ interface TodoPageSingleProps {
 export default class TodoPageSingle extends React.Component<TodoPageSingleProps,{}> {
   render() {
     const id = this.props.params.id;
-    let todo = this.props.todos.todos[id];
+    let todo = this.props.todos.todos.length > 0 ? this.props.todos.todos[id] : undefined;
 
     return (
-        <div>
+        <div className="container">
           {todo ? <TodoView todo={todo} /> : <div>Not Found</div>}
           <Link to="/">Home</Link>
         </div>

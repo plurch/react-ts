@@ -12,7 +12,7 @@ declare interface TodoPageProps {
 export default class TodoPage extends React.Component<TodoPageProps,{}> {
   render() {
     return (
-        <div>
+        <div className="container">
           <TodoList store={this.props.todos} />
           <br />
           <Link to="/single/0">Item 0</Link>
