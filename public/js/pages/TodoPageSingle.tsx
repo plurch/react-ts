@@ -1,5 +1,5 @@
 import React = require("react");
-import TodoView from "./TodoView";
+import TodoView from "./components/TodoView";
 import { inject } from 'mobx-react';
 import Todo from "../stores/Todo";
 import {Link} from "react-router";

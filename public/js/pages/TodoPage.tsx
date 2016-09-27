@@ -1,6 +1,6 @@
 import React = require("react");
 import { Link } from 'react-router';
-import TodoList from "./TodoList";
+import TodoList from "./components/TodoList";
 import Todo from "../stores/Todo";
 import { inject } from 'mobx-react';
 
