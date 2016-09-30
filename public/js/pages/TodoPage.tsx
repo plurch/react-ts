@@ -1,19 +1,20 @@
 import React = require("react");
 import { Link } from 'react-router';
-import TodoList from "./components/TodoList";
-import Todo from "../stores/Todo";
 import { inject } from 'mobx-react';
 
-declare interface TodoPageProps {
-  todos: Todo[];
+import TodoList from "./components/TodoList";
+import ObservableTodoStore from "../stores/Todos";
+
+interface TodoPageProps {
+  todoStore: ObservableTodoStore;
 }
 
-@inject("todos")
+@inject("todoStore")
 export default class TodoPage extends React.Component<TodoPageProps,{}> {
   render() {
     return (
         <div className="container">
-          <TodoList store={this.props.todos} />
+          <TodoList store={this.props.todoStore} />
           <br />
           <Link to="/single/0">Item 0</Link>
           <br />

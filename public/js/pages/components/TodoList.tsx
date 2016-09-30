@@ -1,12 +1,12 @@
 import React = require("react");
 import {observer} from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
 import TodoView from "./TodoView";
 
 interface TodoListProps {
   store : any
 }
 
+@observer
 export default class TodoList extends React.Component<TodoListProps,{}> {
   render() {
     const store = this.props.store;
@@ -20,8 +20,7 @@ export default class TodoList extends React.Component<TodoListProps,{}> {
           </ul>
           { store.pendingRequests > 0 ? <span>Loading...</span> : null }
           <button onClick={ this.onNewTodo }>New Todo</button>
-          <small> (double-click a todo to edit)</small>
-          <DevTools />
+          <small> (double-click a todo to edit) <i className="fa fa-bicycle" aria-hidden="true"></i></small>
         </div>
     );
   }
@@ -30,5 +29,3 @@ export default class TodoList extends React.Component<TodoListProps,{}> {
     this.props.store.addTodo(prompt('Enter a new todo:','coffee plz'));
   }
 }
-
-observer(TodoList);

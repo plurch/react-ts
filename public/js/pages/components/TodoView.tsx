@@ -5,6 +5,7 @@ interface TodoViewProps {
   todo : any
 }
 
+@observer
 export default class TodoView extends React.Component<TodoViewProps,{}> {
   render() {
     const todo = this.props.todo;
@@ -24,15 +25,13 @@ export default class TodoView extends React.Component<TodoViewProps,{}> {
     );
   }
 
-  onToggleCompleted = () => {
+  onToggleCompleted() {
     const todo = this.props.todo;
     todo.completed = !todo.completed;
   }
 
-  onRename = () => {
+  onRename() {
     const todo = this.props.todo;
     todo.task = prompt('Task name', todo.task) || todo.task;
   }
 }
-
-observer(TodoView);

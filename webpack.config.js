@@ -41,7 +41,9 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery"
+      jQuery: "jquery",
+      Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
+      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     })
   ]
 };

@@ -1,17 +1,15 @@
-import {observable, computed, extendObservable} from 'mobx';
+import {observable, computed} from 'mobx';
 import Todo from "./Todo";
 
 export default class ObservableTodoStore {
-  todos: Todo[];
-  pendingRequests: number;
+  @observable todos: Todo[] = [];
+  @observable pendingRequests: number;
 
-  get completedTodosCount() {
-    return this.todos.filter(
-        todo => todo.completed === true
-    ).length;
+  @computed get completedTodosCount() : number {
+    return this.todos.filter(todo => todo.completed === true).length;
   }
 
-  get report() {
+  @computed get report() : string {
     if (this.todos.length === 0) {
       return "<none>";
     }
@@ -22,15 +20,7 @@ export default class ObservableTodoStore {
         Progress: ${this.completedTodosCount}/${this.todos.length}`;
   }
 
-  constructor () {
-    extendObservable(this, {
-      todos: [],
-      pendingRequests: 0
-    });
-  }
-
   addTodo(task: string) {
     this.todos.push(new Todo(task));
   }
 }
-

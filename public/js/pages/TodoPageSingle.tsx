@@ -1,23 +1,24 @@
 import React = require("react");
-import TodoView from "./components/TodoView";
 import { inject } from 'mobx-react';
-import Todo from "../stores/Todo";
 import {Link} from "react-router";
+
+import TodoView from "./components/TodoView";
+import Todo from "../stores/Todo";
 
 interface TodoPageSingleProps {
   params : {
     id: number
   },
-  todos: {
+  todoStore: {
     todos: Todo[]
   }
 }
 
-@inject("todos")
+@inject("todoStore")
 export default class TodoPageSingle extends React.Component<TodoPageSingleProps,{}> {
   render() {
     const id = this.props.params.id;
-    let todo = this.props.todos.todos.length > 0 ? this.props.todos.todos[id] : undefined;
+    let todo = this.props.todoStore.todos.length > id ? this.props.todoStore.todos[id] : undefined;
 
     return (
         <div className="container">

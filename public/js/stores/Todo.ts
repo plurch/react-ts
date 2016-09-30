@@ -1,20 +1,17 @@
-import {extendObservable} from 'mobx';
+import {observable} from 'mobx';
 
 export default class Todo {
-  
-  constructor (public task : string,
-               public completed : boolean = false,
-               public assignee : any = {
-                 name: "John",
-                 lastname: "Doe"
-               }) {
 
-    //Properties inside a tod o need to be observable in order for the list view to pick up
-    //changes made to them
-    extendObservable(this, {
-      task: this.task,
-      completed: this.completed,
-      assignee: assignee
-    })
+  @observable task : string;
+  @observable completed : boolean;
+  @observable assignee : any;
+  
+  constructor (task = '', completed = false, assignee = {
+    name: "John",
+    lastname: "Doe"
+  }) {
+    this.task = task;
+    this.completed = completed;
+    this.assignee = assignee;
   }
 }
