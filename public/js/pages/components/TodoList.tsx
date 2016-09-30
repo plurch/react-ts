@@ -20,7 +20,7 @@ export default class TodoList extends React.Component<TodoListProps,{}> {
           </ul>
           { store.pendingRequests > 0 ? <span>Loading...</span> : null }
           <button onClick={ this.onNewTodo }>New Todo</button>
-          <small> (double-click a todo to edit) <i className="fa fa-bicycle" aria-hidden="true"></i></small>
+          <small> (double-click a todo to edit) <i className="fa fa-bicycle" aria-hidden="true"></i> <span className="glyphicon glyphicon-ok" aria-hidden="true"></span></small>
         </div>
     );
   }
