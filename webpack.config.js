@@ -6,7 +6,8 @@ module.exports = {
   entry: "./public/js/main.tsx",
   output: {
     filename: "bundle.js",
-    path: __dirname + '/public/dist'
+    path: __dirname + '/public/dist',
+    publicPath: 'dist/'
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -20,7 +21,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.tsx?$/, loader: "ts-loader" },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css?sourceMap!postcss!sass") },
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css?sourceMap!postcss!sass", {publicPath: ''}) },
       { test: /\.(?:jpe?g|gif|svg|woff2?|ttf|eot)(?:\?(?:v=)?(?:\.|\w)+)?$/, loader: "file" }
     ],
 
