@@ -3,6 +3,7 @@ import ReactDOM = require("react-dom");
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { Provider } from 'mobx-react';
 import ObservableTodoStore from './stores/Todos';
+import 'bootstrap-sass';
 
 import App from "./pages/App";
 import TodoPage from "./pages/TodoPage";

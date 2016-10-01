@@ -21,7 +21,7 @@ export default class TodoPageSingle extends React.Component<TodoPageSingleProps,
     let todo = this.props.todoStore.todos.length > id ? this.props.todoStore.todos[id] : undefined;
 
     return (
-        <div className="container">
+        <div className="container-fluid">
           {todo ? <TodoView todo={todo} /> : <div>Not Found</div>}
           <Link to="/">Home</Link>
         </div>

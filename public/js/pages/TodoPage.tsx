@@ -13,7 +13,7 @@ interface TodoPageProps {
 export default class TodoPage extends React.Component<TodoPageProps,{}> {
   render() {
     return (
-        <div className="container">
+        <div className="container-fluid">
           <TodoList store={this.props.todoStore} />
           <br />
           <Link to="/single/0">Item 0</Link>
