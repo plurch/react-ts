@@ -1,7 +1,7 @@
-// Bootstrap:
-$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+// Libraries:
+// (font paths are relative to the 'dist/' directory)
+$icon-font-path: "../fonts/bootstrap/";
+@import "lib/bootstrap/stylesheets/_bootstrap";
 
-// Font Awesome:
-$fa-font-path: "../../node_modules/font-awesome/fonts/";
-@import "../../node_modules/font-awesome/scss/font-awesome";
+$fa-font-path: "../fonts/font-awesome/";
+@import "lib/font-awesome/scss/font-awesome";

@@ -10,11 +10,11 @@ export default class TodoView extends React.Component<TodoViewProps,{}> {
   render() {
     const todo = this.props.todo;
     return (
-        <li onDoubleClick={ this.onRename }>
+        <li onDoubleClick={ this.onRename.bind(this) }>
           <input
               type='checkbox'
               checked={ todo.completed }
-              onChange={ this.onToggleCompleted }
+              onChange={ this.onToggleCompleted.bind(this) }
           />
           { todo.task }
           { todo.assignee

@@ -1,6 +1,4 @@
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: "./public/js/main.tsx",
@@ -20,19 +18,13 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.tsx?$/, loader: "ts-loader" },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css?sourceMap!postcss!sass", {publicPath: ''}) },
-      { test: /\.(?:jpe?g|gif|svg|woff2?|ttf|eot)(?:\?(?:v=)?(?:\.|\w)+)?$/, loader: "file" }
+      { test: /\.tsx?$/, loader: "ts-loader" }
     ],
 
     preLoaders: [
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { test: /\.js$/, loader: "source-map-loader" }
     ]
-  },
-
-  postcss: function () {
-    return [autoprefixer];
   },
 
   plugins: [
@@ -46,7 +38,6 @@ module.exports = {
       jQuery: "jquery",
       Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
       fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    }),
-    new ExtractTextPlugin("styles.css")
+    })
   ]
 };

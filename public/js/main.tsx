@@ -9,9 +9,6 @@ import App from "./pages/App";
 import TodoPage from "./pages/TodoPage";
 import TodoPageSingle from "./pages/TodoPageSingle";
 
-// add styling using webpack loaders:
-import '../scss/main.scss';
-
 let todoStore = new ObservableTodoStore();
 
 ReactDOM.render(
