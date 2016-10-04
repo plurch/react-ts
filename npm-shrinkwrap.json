@@ -7,6 +7,11 @@
       "from": "@types/history@*",
       "resolved": "https://registry.npmjs.org/@types/history/-/history-2.0.38.tgz"
     },
+    "@types/node": {
+      "version": "6.0.42",
+      "from": "@types/node@latest",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-6.0.42.tgz"
+    },
     "@types/react": {
       "version": "0.14.38",
       "from": "@types/react@0.14.38",

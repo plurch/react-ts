@@ -4,10 +4,12 @@
   "description": "",
   "main": "./dist/bundle.js",
   "scripts": {
-    "build": "npm run build:js && npm run build:css",
+    "build:prod": "NODE_ENV=production npm run runBuild",
+    "build:dev": "NODE_ENV=development npm run runBuild",
+    "runBuild": "npm run build:js && npm run build:css",
     "build:js": "webpack",
     "build:css": "node-sass --source-map true ./public/scss/main.scss ./public/dist/styles.css",
-    "watch": "npm run build:js -- --watch & npm run build:css -- -r -w"
+    "watch": "NODE_ENV=development npm run build:js -- --watch & npm run build:css -- -r -w"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "webpack": "^1.13.2"
   },
   "dependencies": {
+    "@types/node": "^6.0.42",
     "@types/react": "^0.14.38",
     "@types/react-dom": "^0.14.17",
     "@types/react-router": "^2.0.37",

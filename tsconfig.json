@@ -6,7 +6,8 @@
         "target": "es5",
         "jsx": "react",
         "noImplicitAny": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "types": ["node"]
     },
     "include": [
       "src/**/*.ts"

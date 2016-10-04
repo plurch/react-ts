@@ -11,7 +11,7 @@ export default class App extends React.Component<{},{}> {
 
           {this.props.children}
           <div>Footer</div>
-          <DevTools position={{ bottom: 0, left: 20 }}/>
+          {process.env.NODE_ENV==='development' && <DevTools position={{ bottom: 0, left: 20 }}/>}
         </div>
     );
   }
